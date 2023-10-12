@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멤버리스트</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>멤버번호</th>
+			<th>이름</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+		</tr>
+			{%for member in memberlist%}
+		<tr>
+			<td><a href="/member_detail?m_id={{member.m_id}}">{{member.m_id}}</a></td>
+			<td>{{member.m_name}}</td>
+			<td>{{member.tel}}</td>
+			<td>{{member.email}}</td>
+		</tr>
+			{%endfor%}
+		<tr>
+			<td colspan="4"><input type="button" value="추가" onclick="location.href='/member_add'"/></td> 
+			<!-- 전자정부에서는 onclick=fn_함수명() 으로 자바스크립트로 보냄 -->
+		</tr>
+	</table>
+</body>
+</html>

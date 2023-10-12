@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- emp_mod에서 if else 안쓰면 다른 메서드로 보내도됨 -->
+	<form action="/member_mod_act" method="post"> 
+		<table border="1">
+			<tr>
+				<th>사번</th>
+				<td><input type="text" value="{{member.m_id}}" name="m_id"/></td>
+			</tr>
+			
+			<tr>
+				<th>이름</th>
+				<td><input type="text" value="{{member.m_name}}" name="m_name"/></td>
+			</tr>
+			
+			<tr>
+				<th>성별</th>
+				<td><input type="text" value="{{member.tel}}" name="tel"/></td>
+			</tr>
+			
+			<tr>
+				<th>주소</th>
+				<td><input type="text" value="{{member.email}}" name="email"/></td>
+			</tr>
+			
+			<tr>
+				<td><input type="submit" value="저장"/></td>
+				<td><input type="button" value="취소" onclick="location.href='/member_detail?m_id={{member.m_id}}'"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

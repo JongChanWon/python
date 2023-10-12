@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>사번</th>
+			<th>이름</th>
+			<th>성별</th>
+			<th>주소</th>
+		</tr>
+			{%for user in empList%}
+		<tr>
+			<td><a href="/emp_detail?e_id={{user.e_id}}">{{user.e_id}}</a></td>
+			<td>{{user.e_name}}</td>
+			<td>{{user.gen}}</td>
+			<td>{{user.addr}}</td>
+		</tr>
+			{%endfor%}
+		<tr>
+			<td><input type="button" value="추가" onclick="location.href='/emp_add'"/></td> 
+			<!-- 전자정부에서는 onclick=fn_함수명() 으로 자바스크립트로 보냄 -->
+		</tr>
+	</table>
+</body>
+</html>

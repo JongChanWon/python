@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//let cnt = "{{cnt}}"; // 이렇게 하면 문자로 비교해야함
+		let cnt = {{cnt}};
+		if(cnt == 1) {
+			alert('수정 완료');
+			location.href = "/member_list";
+		} else {
+			alert('수정 실패');
+			history.back(); // history.go() 는 앞으로 가기
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//let cnt = "{{cnt}}"; // 이렇게 하면 문자로 비교해야함
+		let cnt = {{cnt}};
+		let msg = {{msg}};
+		if(cnt == 1 && msg == "성공") {
+			console.log('성공')
+			alert('수정 완료');
+			location.href = "/emp_list";
+		} else {
+			alert('수정 실패');
+			history.back(); // history.go() 는 앞으로 가기
+		}
+		
+	</script>
+</body>
+</html>

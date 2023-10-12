@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- emp_mod에서 if else 안쓰면 다른 메서드로 보내도됨 -->
+	<form action="/emp_mod_act" method="post"> 
+		<table border="1">
+			<tr>
+				<th>사번</th>
+				<td><input type="text" value="{{emp.e_id}}" name="e_id"/></td>
+			</tr>
+			
+			<tr>
+				<th>이름</th>
+				<td><input type="text" value="{{emp.e_name}}" name="e_name"/></td>
+			</tr>
+			
+			<tr>
+				<th>성별</th>
+				<td><input type="text" value="{{emp.gen}}" name="gen"/></td>
+			</tr>
+			
+			<tr>
+				<th>주소</th>
+				<td><input type="text" value="{{emp.addr}}" name="addr"/></td>
+			</tr>
+			
+			<tr>
+				<td><input type="submit" value="저장"/></td>
+				<td><input type="button" value="취소" onclick="location.href='/emp_detail?e_id={{emp.e_id}}'"/></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		//let cnt = "{{cnt}}"; // 이렇게 하면 문자로 비교해야함
+		let cnt = {{cnt}};
+		let msg = {{msg}};
+		if(cnt == 1 && msg == "성공") {
+			alert('수정 완료');
+			location.href = "emp_list";
+		} else {
+			alert('수정 실패');
+			history.back(); // history.go() 는 앞으로 가기
+		}
+		
+	</script>
+</body>
+</html>

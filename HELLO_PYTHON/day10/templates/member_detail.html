@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멤버 정보</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>멤버번호</th>
+			<td>{{member.m_id}}</td>
+		</tr>
+		<tr>
+			<th>이름</th>
+			<td>{{member.m_name}}</td>
+		</tr>
+		<tr>	
+			<th>전화번호</th>
+			<td>{{member.tel}}</td>
+		</tr>
+		<tr>
+			<th>이메일</th>
+			<td>{{member.email}}</td>
+		</tr>
+			
+		<tr>
+			<td>
+				<input type="button" value="수정" onclick="location.href='/member_mod?m_id={{member.m_id}}'"/>
+				<input type="button" value="삭제" onclick="location.href='/member_del_act?m_id={{member.m_id}}'"/>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input[name='ita'], input[name='itb'], input[name='itc'] {
+		width: 30px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+		function add() {
+			let ita = document.getElementsByName('ita')[0];
+			let itb = document.getElementsByName('itb')[0];
+			let itc = document.getElementsByName("itc")[0];
+			
+			itc = parseInt(ita) + parseInt(itb);
+			console.log(itc);
+		}
+	</script>
+<body>
+	<input type="text" name="ita" id="ita"/>
+	+
+	<input type="text" name="itb" id="itb"/>
+	<input type="button" value="=" onclick="add()"/>
+	<input type="text" name="itc" id="itc"/>
+	
+	
+</body>
+</html>
