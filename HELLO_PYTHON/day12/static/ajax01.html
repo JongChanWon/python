@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function myajax() {
+	let data = {menu:'짬뽕'};
+	$.ajax({
+	    type: "GET",
+	    url: '/myajax',
+	    data: data,
+	    success: (res) => {
+	      console.log(res);
+	    }
+	  });
+}
+</script>
+</head>
+<body>
+	<a href="javascript:myajax()">ajax</a> <!-- 위에 자바스크립트 함수 호출 -->
+</body>
+</html>

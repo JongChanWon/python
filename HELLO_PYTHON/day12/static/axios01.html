@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+function myajax_axios() {
+	axios('/myajax_axios', {
+		
+		/* menu: '짬뽕' */
+		method: 'get',
+		params: 'won'
+		
+	})
+	.then(function (response) {
+		console.log(response);
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
+}
+</script>
+</head>
+<body>
+	<a href="javascript:myajax_axios()">ajax</a> <!-- 위에 자바스크립트 함수 호출 -->
+</body>
+</html>

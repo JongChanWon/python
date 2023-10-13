@@ -12,15 +12,19 @@
 </head>
 <script type="text/javascript">
 	
-	
-
 	function myclick() {
-		let ita = $('#ita').val();
-		let itb = $('#itb').val();
-		let itc = $('#itc').val();
+		let ita = $("input[name='ita']").val();
+		let itb = $("input[name='itb']").val();
+		let itc = ita + itb
+		$("input[name='itc']").val(itc);
 		
-		itc = parseInt(ita) + parseInt(itb);
-		console.log(itc)
+		/* let itb = $('#itb').val();
+		let itc = $('#itc').val(); */
+		
+		
+		
+		/* itc = parseInt(ita) + parseInt(itb);
+		console.log(itc) */
 	}
 	
 	$(document).ready(function(){
@@ -35,7 +39,6 @@
 	<input type="text" name="itb" id="itb"/>
 	<input type="button" value="=" id="btn"/>
 	<input type="text" name="itc" id="itc"/>
-	
 	
 </body>
 </html>

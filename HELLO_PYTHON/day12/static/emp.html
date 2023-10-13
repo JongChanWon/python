@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function fn_list() {
+	let data = {menu:'짬뽕'};
+	$.ajax({
+	    type: "POST",
+	    url: '/emp_selects',
+	    success: (res) => {
+	      let list = res.list;
+	      let txt = "";
+	      for(let i = 0; i < list.length; i++) {
+	    	  let e_id = list[i].e_id;
+	    	  let e_name = list[i].e_name;
+	    	  let gen = list[i].gen;
+	    	  let addr = list[i].addr;
+	    	  txt += `
+		  			<tr>
+						<td><a href="javascript:fn_one('${e_id}')">${e_id}</a></td>
+						<td>${e_name}</td>
+						<td>${gen}</td>
+						<td>${addr}</td>
+					</tr>
+	    	  
+	    	  `;
+	      }
+	      $("#my_tbody").html(txt);
+	    }
+	 });
+}
+function fn_one(e_id) {
+	let data = {e_id:e_id};
+	$.ajax({
+	    type: "GET",
+	    url: '/emp_select',
+	    data: data,
+	    success: (res) => {
+	    	let one = res.one;
+	    	console.log(one);
+	    	
+	    }
+	 });
+}
+
+$(document).ready(function(){
+	fn_list();
+});
+</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>사번</th>
+				<th>이름</th>
+				<th>성별</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="my_tbody">
+			<tr>
+				<td colspan="4">데이터가 없습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1">
+		
+	</table>
+</body>
+</html>
